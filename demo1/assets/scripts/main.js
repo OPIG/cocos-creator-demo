@@ -20,10 +20,10 @@ cc.Class({
 
     this.m_login = cc.instantiate(this.m_LoginPrefab)
     this.m_BackGround.addChild(this.m_login)
-    this.m_loading = cc.instantiate(this.m_LoadingPrefab)
+    // this.m_loading = cc.instantiate(this.m_LoadingPrefab)
 
-    this.m_BackGround.addChild(this.m_loading)
-    this.m_loading.active = false
+    // this.m_BackGround.addChild(this.m_loading)
+    // this.m_loading.active = false
 
     // // 加载进度条
     // this.m_loading = this.m_loading.getComponent('loading')
