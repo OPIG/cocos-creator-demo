@@ -9,23 +9,11 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        // foo: {
-        //     // ATTRIBUTES:
-        //     default: null,        // The default value will be used only when the component attaching
-        //                           // to a node for the first time
-        //     type: cc.SpriteFrame, // optional, default is typeof default
-        //     serializable: true,   // optional, default is true
-        // },
-        // bar: {
-        //     get () {
-        //         return this._bar;
-        //     },
-        //     set (value) {
-        //         this._bar = value;
-        //     }
-        // },
-        m_LoadingPrefab: cc.Node,
-        m_BackGround: cc.Node
+        // m_LoadingPrefab: cc.Node,
+        // m_BackGround: cc.Node,
+
+        m_Account: cc.EditBox,
+        m_Pwd: cc.EditBox
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -45,23 +33,26 @@ cc.Class({
       // })
       require('jquery')
 
-      $.ajax({
-        headers:{
-          Accept: '*/*'
-        },
-        url: 'http://localhost:3004/products', // json server 支持跨域
-        // url: 'http://localhost:3004/goods',
+      // $.ajax({
+      //   headers:{
+      //     Accept: '*/*'
+      //   },
+      //   url: 'http://localhost:3004/products', // json server 支持跨域
+      //   // url: 'http://localhost:3004/goods',
 
-       })
+      //  })
     },
 
     handleLoginFunc: function() {
-      this.m_loading = cc.instantiate(this.m_LoadingPrefab)
-      this.m_BackGround.addChild(this.m_loading)
+      var account = this.m_Account.string
+      var pwd = this.m_Pwd.string
+      console.log(account, pwd)
+      // this.m_loading = cc.instantiate(this.node.parent.m_LoadingPrefab)
+      // this.node.parent.m_BackGround.addChild(this.m_loading)
 
-       // 加载进度条
-      this.m_loading = this.m_loading.getComponent('loading')
-      this.m_loading.setProgress(1)
+      //  加载进度条
+      // this.m_loading = this.m_loading.getComponent('loading')
+      // this.m_loading.setProgress(1)
     },
 
     start () {
