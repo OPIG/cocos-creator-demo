@@ -16,7 +16,7 @@ cc.Class({
         },
         speed: {
           type: cc.Inetger,
-          default: 300
+          default: 350
         },
         m_Progress: {
           type: cc.Inetger,

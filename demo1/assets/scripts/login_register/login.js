@@ -33,16 +33,11 @@ cc.Class({
     // socket.on('connected', function(msg){
     //   console.log(msg,'-----');
     // })
-    require('jquery')
 
-    // $.ajax({
-    //   headers:{
-    //     Accept: '*/*'
-    //   },
-    //   url: 'http://localhost:3004/products', // json server 支持跨域
-    //   // url: 'http://localhost:3004/goods',
-
-    //  })
+ require('api')
+api.getAllUsers().then(res=> {
+  console.log(res, 'success');
+})
   },
 
   handleLoginFunc: function () {
@@ -59,12 +54,35 @@ cc.Class({
       this.m_loading.node.y = -200
       this.m_loading.setProgress(1)
 
-      if(account === 'test' && pwd === '123') {
-        console.log('login success')
-      }
+      let isLogin = false
+      api.getUserByAccount({account}).then(res=> {
+        if(res.length) {
+          if(res[0].pwd === pwd) {
+            isLogin = true
+            window.account = res[0]
+            localStorage.setItem('account',account)
+            // localStorage.setItem('pwd',pwd)
+            // cc.director.loadScene('knife')
+            
+            // let games = cc.instantiate(this.node.parent.m_GamesPrefab)
+            // this.node.parent.addChild(games)
+            // this.node.parent.
+          } else {
+            console.log('wrong pwd');
+          }
+        } else {
+          console.log('wrong account');
+        }
+      }).catch(err => {
+        console.log(err)
+      })
 
       this.m_loading.finishCallBack = function(){
+        if(isLogin) {
+          this.node.active = false
+        }
         this.m_loading.node.active = false
+        // cc.director.loadScene('knife')
       }.bind(this)
 
     }).catch(err => {

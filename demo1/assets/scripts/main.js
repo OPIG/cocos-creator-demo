@@ -11,13 +11,13 @@ cc.Class({
   properties: {
     m_LoadingPrefab: cc.Prefab,
     m_LoginPrefab: cc.Prefab,
+    m_GamesPrefab: cc.Prefab,
     m_BackGround: cc.Node
   },
 
   // LIFE-CYCLE CALLBACKS:
 
   onLoad () {
-
     this.m_login = cc.instantiate(this.m_LoginPrefab)
     this.m_BackGround.addChild(this.m_login)
     // this.m_loading = cc.instantiate(this.m_LoadingPrefab)
@@ -41,6 +41,13 @@ cc.Class({
 
   start () {
 
+  },
+
+  enterBirdGame() {
+    cc.director.loadScene('bird')
+  },
+  enterKnifeGame() {
+    cc.director.loadScene('knife')
   },
 
   // update (dt) {},

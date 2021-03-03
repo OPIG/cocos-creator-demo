@@ -1,0 +1,41 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "account": "test",
+      "pwd": "123",
+      "games": {
+        "knife": {
+          "level": 0,
+          "score": 23
+        }
+      }
+    },
+    {
+      "id": 2,
+      "account": "admin",
+      "pwd": "123",
+      "games": {
+        "knife": {
+          "level": 0,
+          "score": 210
+        }
+      }
+    },
+    {
+      "account": "dd",
+      "pwd": "12",
+      "games": {
+        "knife": {
+          "level": 0,
+          "score": 0
+        },
+        "bird": {
+          "level": 1,
+          "score": 0
+        }
+      },
+      "id": 3
+    }
+  ]
+}
