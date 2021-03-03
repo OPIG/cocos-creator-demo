@@ -1079,8 +1079,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "笨鸟先飞",
-    "_N$string": "笨鸟先飞",
+    "_string": "小鸟游戏",
+    "_N$string": "小鸟游戏",
     "_fontSize": 20,
     "_lineHeight": 40,
     "_enableWrapText": false,
@@ -1329,6 +1329,8 @@
     "knifeNode": null,
     "knifePrefab": null,
     "newGameNode": null,
+    "msgNode": null,
+    "time_score": null,
     "_id": "ebvCC8G6ZNN4XcuyWvmw8s"
   },
   {

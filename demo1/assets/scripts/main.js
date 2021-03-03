@@ -44,7 +44,7 @@ cc.Class({
   },
 
   enterBirdGame() {
-    cc.director.loadScene('bird')
+    cc.director.loadScene('flappybird')
   },
   enterKnifeGame() {
     cc.director.loadScene('knife')
