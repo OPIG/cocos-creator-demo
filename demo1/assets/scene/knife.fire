@@ -95,7 +95,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 480,
+      "width": 960,
       "height": 600
     },
     "_anchorPoint": {
@@ -107,7 +107,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        240,
+        480,
         300,
         0,
         0,
@@ -171,7 +171,7 @@
       "array": [
         0,
         0,
-        465.05564183224357,
+        349.87426312891324,
         0,
         0,
         0,
@@ -274,7 +274,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 480,
+      "width": 960,
       "height": 600
     },
     "_anchorPoint": {
@@ -2597,6 +2597,17 @@
     "time_score": {
       "__id__": 47
     },
+    "musicList": [
+      {
+        "__uuid__": "2dfb2178-3176-4c68-9723-0d609fc90a42"
+      },
+      {
+        "__uuid__": "706ef825-3f6b-43f9-981e-2012331ca9a7"
+      },
+      {
+        "__uuid__": "0851391d-1d52-40cf-b76b-c85b42db21b6"
+      }
+    ],
     "_id": "5dhgSErs5NqJSS+DxMCM+6"
   },
   {
@@ -2609,7 +2620,7 @@
     "_enabled": true,
     "_designResolution": {
       "__type__": "cc.Size",
-      "width": 480,
+      "width": 960,
       "height": 600
     },
     "_fitWidth": false,

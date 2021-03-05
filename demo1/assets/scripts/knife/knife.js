@@ -7,7 +7,11 @@ cc.Class({
     knifePrefab: cc.Prefab,
     newGameNode: cc.Node,
     msgNode: cc.Node,
-    time_score: cc.Node
+    time_score: cc.Node,
+    musicList: {
+      type: cc.AudioClip,
+      default: []
+    }
   },
 
   // LIFE-CYCLE CALLBACKS:
@@ -77,7 +81,8 @@ cc.Class({
   },
 
   changeSpeed () {
-    let dir = Math.random() * 100 > 30 ? 1 : -1
+    let dir =1
+    // let dir = Math.random() * 100 > 30 ? 1 : -1
     let speed = 1 + Math.random() * this.level
     this.tragetRotation = dir * speed
   },
@@ -92,6 +97,8 @@ cc.Class({
           let isHit = false
           let gap = 8
 
+          cc.audioEngine.play(this.musicList[0], false, 0.3)
+
           for (let knifeNode of this.knifeArr) {
             if (Math.abs(knifeNode.angle) < gap || Math.abs(360 - knifeNode.angle) < gap) {
               isHit = true
@@ -101,6 +108,7 @@ cc.Class({
 
           if (isHit || this.currentTime <= 0) {
             clearInterval(this.timeInterval)
+            cc.audioEngine.play(this.musicList[1], false, 0.3)
 
             this.knifeNode.runAction(cc.sequence(
               cc.spawn(
@@ -108,6 +116,7 @@ cc.Class({
                 cc.rotateTo(0.25, Math.random() * 90)
               ),
               cc.callFunc(() => {
+                // cc.tween(this.newGameNode).delay()
                 this.newGameNode.active = true
                 this.newGameNode.zIndex = 2
                 this.isStart = false
@@ -115,6 +124,7 @@ cc.Class({
                   this.msgNode = this.msgNode.getComponent(cc.Label)
                   this.msgNode.string = '当前处于第' + this.level + '关，得分为：' + this.currentScore
                 }
+                cc.audioEngine.play(this.musicList[2], false, 0.3)
 
                 if (window.account) {
                   let { account, id } = window.account

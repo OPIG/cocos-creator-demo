@@ -2,7 +2,8 @@
 // console.log($,'jquery');
 
 
-let baseUrl = 'http://localhost:3333/'
+let baseUrl = 'http://172.25.156.76:3333/'
+// let baseUrl = 'http://localhost:3333/'
 let contentType = 'application/json;charset=utf-8'
 
 function _ajax (data) {

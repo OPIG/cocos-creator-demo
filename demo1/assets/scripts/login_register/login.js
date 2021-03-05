@@ -34,10 +34,11 @@ cc.Class({
     //   console.log(msg,'-----');
     // })
 
- require('api')
-api.getAllUsers().then(res=> {
-  console.log(res, 'success');
-})
+    require('api')
+    api.getAllUsers().then(res => {
+      // console.log(res, 'success');
+      console.table(res);
+    })
   },
 
   handleLoginFunc: function () {
@@ -55,18 +56,13 @@ api.getAllUsers().then(res=> {
       this.m_loading.setProgress(1)
 
       let isLogin = false
-      api.getUserByAccount({account}).then(res=> {
-        if(res.length) {
-          if(res[0].pwd === pwd) {
+      api.getUserByAccount({ account }).then(res => {
+        if (res.length) {
+          if (res[0].pwd === pwd) {
             isLogin = true
             window.account = res[0]
-            localStorage.setItem('account',account)
-            // localStorage.setItem('pwd',pwd)
+            localStorage.setItem('user', JSON.stringify({ "account": account, 'pwd': pwd }))
             // cc.director.loadScene('knife')
-            
-            // let games = cc.instantiate(this.node.parent.m_GamesPrefab)
-            // this.node.parent.addChild(games)
-            // this.node.parent.
           } else {
             console.log('wrong pwd');
           }
@@ -77,8 +73,8 @@ api.getAllUsers().then(res=> {
         console.log(err)
       })
 
-      this.m_loading.finishCallBack = function(){
-        if(isLogin) {
+      this.m_loading.finishCallBack = function () {
+        if (isLogin) {
           this.node.active = false
         }
         this.m_loading.node.active = false
@@ -96,9 +92,9 @@ api.getAllUsers().then(res=> {
     return new Promise((resolve, reject) => {
       let { account, pwd } = data
       if (!/^([a-zA-Z]|[\u4e00-\u9fa5]){1,}$/.test(account)) {
-        reject('请输入账号')
+        reject('请输入有效账号')
       } else if (!/^\d+$/.test(pwd)) {
-        reject('请输入密码')
+        reject('请输入有效密码')
       } else {
         resolve('success')
       }

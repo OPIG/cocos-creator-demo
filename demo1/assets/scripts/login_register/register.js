@@ -64,9 +64,9 @@ cc.Class({
     return new Promise((resolve, reject) => {
       let { account, pwd, confirm_pwd } = data
       if (!/^([a-zA-Z]|[\u4e00-\u9fa5]){1,}$/.test(account)) {
-        reject('请输入账号')
+        reject('请输入有效账号')
       } else if (!/^\d+$/.test(pwd)) {
-        reject('请输入密码')
+        reject('请输入有效密码')
       } else if (!/^\d+$/.test(confirm_pwd)) {
         reject('请输入确认密码')
       } else if (confirm_pwd !== pwd) {

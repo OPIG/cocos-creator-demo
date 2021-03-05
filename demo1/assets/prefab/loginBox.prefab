@@ -1154,7 +1154,7 @@
       "__id__": 24
     },
     "_children": [],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 30
@@ -1176,7 +1176,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 158,
+      "width": 212,
       "height": 40
     },
     "_anchorPoint": {
@@ -1188,7 +1188,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -78,
+        -102,
         20,
         0,
         0,
@@ -1221,11 +1221,15 @@
       "__id__": 29
     },
     "_enabled": true,
-    "_materials": [],
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "",
-    "_N$string": "",
+    "_string": "test",
+    "_N$string": "test",
     "_fontSize": 20,
     "_lineHeight": 25,
     "_enableWrapText": false,
@@ -1286,7 +1290,7 @@
       "__id__": 24
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 34
@@ -1422,7 +1426,7 @@
       "__id__": 24
     },
     "_enabled": true,
-    "_string": "",
+    "_string": "test",
     "returnType": 0,
     "maxLength": 8,
     "_tabIndex": 0,
@@ -1670,7 +1674,7 @@
       "__id__": 39
     },
     "_children": [],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 45
@@ -1692,7 +1696,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 158,
+      "width": 212,
       "height": 40
     },
     "_anchorPoint": {
@@ -1704,7 +1708,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -78,
+        -102,
         20,
         0,
         0,
@@ -1737,11 +1741,15 @@
       "__id__": 44
     },
     "_enabled": true,
-    "_materials": [],
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "",
-    "_N$string": "",
+    "_string": "●●●",
+    "_N$string": "●●●",
     "_fontSize": 20,
     "_lineHeight": 25,
     "_enableWrapText": false,
@@ -1802,7 +1810,7 @@
       "__id__": 39
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 49
@@ -1938,7 +1946,7 @@
       "__id__": 39
     },
     "_enabled": true,
-    "_string": "",
+    "_string": "123",
     "returnType": 0,
     "maxLength": 8,
     "_tabIndex": 0,
