@@ -91,13 +91,13 @@ cc.Class({
     if (this.canThrow) {
       this.canThrow = false
 
+      cc.audioEngine.play(this.musicList[0], false, 0.3)
+
       this.knifeNode.runAction(cc.sequence(
         cc.moveTo(0.15, cc.v2(this.knifeNode.x, this.targetNode.y - this.targetNode.width / 2)),
         cc.callFunc(() => {
           let isHit = false
           let gap = 8
-
-          cc.audioEngine.play(this.musicList[0], false, 0.3)
 
           for (let knifeNode of this.knifeArr) {
             if (Math.abs(knifeNode.angle) < gap || Math.abs(360 - knifeNode.angle) < gap) {

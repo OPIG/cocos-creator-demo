@@ -101,3 +101,17 @@ getActionByTag()： 通过目标对象和标签获取一个动作。<https://blo
     }
 
 ```
+
+
+Node.runAction // node节点执行一系列动作
+cc.sequence(action1, action2, ...) // 串行 
+cc.spawn(action1, action2, ...) // 并行  同时执行
+cc.moveTo(durtime, x, y) // 绝对位移
+cc.moveBy(durtime, x, y) // 相对位移
+cc.scaleTo(durtime, x, y) // 绝对缩放
+cc.scaleBy(durtime, x, y) // 相对缩放
+cc.rotateTo(durtime, 角度) // 绝对旋转
+cc.rotateBy(durtime, 角度) // 相对旋转
+cc.fadeOut(durtime) // 淡出， 修改opacity属性 0-255
+cc.fadeTo(durtime) // 淡入
+cc.callFunc(()=>{}) // 回调函数
