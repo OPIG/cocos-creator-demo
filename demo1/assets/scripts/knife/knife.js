@@ -69,7 +69,7 @@ cc.Class({
       this.changeSpeed()
     }, 5000 * Math.random() - this.level)
 
-    this.currentTime = 60
+    this.currentTime = 10
     this.timeInterval = setInterval(() => {
       this.currentTime--
       if (this.currentTime <= 0) {
@@ -117,34 +117,7 @@ cc.Class({
               ),
               cc.callFunc(() => {
                 // cc.tween(this.newGameNode).delay()
-                this.newGameNode.active = true
-                this.newGameNode.zIndex = 2
-                this.isStart = false
-                if (this.msgNode) {
-                  this.msgNode = this.msgNode.getComponent(cc.Label)
-                  this.msgNode.string = '当前处于第' + this.level + '关，得分为：' + this.currentScore
-                }
-                cc.audioEngine.play(this.musicList[2], false, 0.3)
-
-                if (window.account) {
-                  let { account, id } = window.account
-                  let data = {
-                    "id": id,
-                    "account": account,
-                    "games":
-                    {
-                      "knife": {
-                        "level": this.level,
-                        "score": this.currentScore
-                      }
-                    }
-                  }
-                  api.updateScoreByAccount(data).then(res => {
-                    console.log(res, 'update score success');
-                  }).catch(err => {
-                    console.log(err, 'err');
-                  })
-                }
+                this.showResult()
               })
             ))
           } else {
@@ -185,7 +158,7 @@ cc.Class({
   },
 
   update (dt) {
-    if (this.isStart) {
+    if (this.isStart && this.currentTime > 0) {
       // target 旋转
       this.targetNode.angle = (this.targetNode.angle + this.tragetRotation) % 360
 
@@ -200,9 +173,43 @@ cc.Class({
 
       this.time_score.children[1].getComponent(cc.Label).string = this.currentScore
     }
+    if(this.isStart&&this.currentTime<=0){
+      this.showResult()
+      this.canThrow= false
+    }
   },
 
   logout () {
     cc.director.loadScene('main')
+  },
+  showResult(){
+    this.newGameNode.active = true
+    this.newGameNode.zIndex = 2
+    this.isStart = false
+    if (this.msgNode) {
+      this.msgNode = this.msgNode.getComponent(cc.Label)
+      this.msgNode.string = '当前处于第' + this.level + '关，得分为：' + this.currentScore
+    }
+    cc.audioEngine.play(this.musicList[2], false, 0.3)
+
+    if (window.account) {
+      let { account, id } = window.account
+      let data = {
+        "id": id,
+        "account": account,
+        "games":
+        {
+          "knife": {
+            "level": this.level,
+            "score": this.currentScore
+          }
+        }
+      }
+      api.updateScoreByAccount(data).then(res => {
+        console.log(res, 'update score success');
+      }).catch(err => {
+        console.log(err, 'err');
+      })
+    }
   }
 });

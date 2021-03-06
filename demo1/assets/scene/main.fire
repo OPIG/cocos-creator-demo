@@ -98,8 +98,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 940,
-      "height": 705
+      "width": 960,
+      "height": 640
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -110,8 +110,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        470,
-        352.5,
+        480,
+        320,
         0,
         0,
         0,
@@ -262,8 +262,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 940,
-      "height": 705
+      "width": 960,
+      "height": 640
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1331,6 +1331,7 @@
     "newGameNode": null,
     "msgNode": null,
     "time_score": null,
+    "musicList": [],
     "_id": "ebvCC8G6ZNN4XcuyWvmw8s"
   },
   {
@@ -1371,7 +1372,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "d6670f85-4ec5-4929-87b1-3844fa6f628b"
+      "__uuid__": "9ee8c2b5-34dc-4133-8a01-082e57e380f9"
     },
     "_type": 2,
     "_sizeMode": 0,
@@ -1397,8 +1398,8 @@
     "_enabled": true,
     "_designResolution": {
       "__type__": "cc.Size",
-      "width": 940,
-      "height": 705
+      "width": 960,
+      "height": 640
     },
     "_fitWidth": false,
     "_fitHeight": true,
